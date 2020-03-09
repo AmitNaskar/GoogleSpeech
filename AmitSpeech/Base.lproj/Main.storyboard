@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AHN-fM-4RX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="if4-eQ-XkW">
+            <objects>
+                <navigationController id="AHN-fM-4RX" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GQ7-nj-9sR">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="7KB-cB-ing"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cks-Mo-BXo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-662" y="102"/>
+        </scene>
+        <!--Speechs-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="SpeechViewController" customModule="AmitSpeech" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="2th-oy-1Pa">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SpeechTableCell" rowHeight="71" id="gqf-v1-CF6" customClass="SpeechTableCell" customModule="AmitSpeech" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="55.5" width="414" height="71"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gqf-v1-CF6" id="0z8-j6-pHf">
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="71"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1bf-2E-fhb">
+                                                    <rect key="frame" x="20" y="11" width="355" height="49"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="1bf-2E-fhb" firstAttribute="trailing" secondItem="0z8-j6-pHf" secondAttribute="trailingMargin" id="ENd-qm-Uhk"/>
+                                                <constraint firstItem="1bf-2E-fhb" firstAttribute="leading" secondItem="0z8-j6-pHf" secondAttribute="leadingMargin" id="S8E-pl-0hG"/>
+                                                <constraint firstItem="1bf-2E-fhb" firstAttribute="top" secondItem="0z8-j6-pHf" secondAttribute="topMargin" id="olm-vk-Clc"/>
+                                                <constraint firstItem="1bf-2E-fhb" firstAttribute="bottom" secondItem="0z8-j6-pHf" secondAttribute="bottomMargin" id="tUL-eZ-gJM"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="speechLabel" destination="1bf-2E-fhb" id="A63-DO-V4i"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="abz-Tf-GEU"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="32J-5r-15w"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="2th-oy-1Pa" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="RFh-f0-5Jc"/>
+                            <constraint firstItem="2th-oy-1Pa" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="yfH-s5-hGR"/>
+                            <constraint firstItem="2th-oy-1Pa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="z7c-b0-e8i"/>
+                            <constraint firstItem="2th-oy-1Pa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zqS-us-Aei"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Speechs" id="GsO-zO-iZF">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="mic" catalog="system" id="8Kn-Ei-VrT">
+                            <connections>
+                                <action selector="recordandStopAudio:" destination="BYZ-38-t0r" id="toT-Qk-Q7s"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="micButton" destination="8Kn-Ei-VrT" id="EYW-kk-kte"/>
+                        <outlet property="speechTableView" destination="2th-oy-1Pa" id="AaK-ZG-0gr"/>
+                        <segue destination="fo6-ja-652" kind="show" identifier="ShowDetail" id="ZvW-0c-YT3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="101.78571428571428"/>
+        </scene>
+        <!--Detail-->
+        <scene sceneID="2wA-FR-pGV">
+            <objects>
+                <viewController id="fo6-ja-652" customClass="SpeechDetailViewController" customModule="AmitSpeech" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8G9-MH-WOg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xyn-Bs-axN">
+                                <rect key="frame" x="20" y="104" width="374" height="282"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="282" id="R36-9S-3Ab"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="TwU-RJ-spG" firstAttribute="trailing" secondItem="xyn-Bs-axN" secondAttribute="trailing" constant="20" id="JqS-cj-lVm"/>
+                            <constraint firstItem="xyn-Bs-axN" firstAttribute="top" secondItem="TwU-RJ-spG" secondAttribute="top" constant="16" id="Paj-ZC-NgD"/>
+                            <constraint firstItem="xyn-Bs-axN" firstAttribute="leading" secondItem="TwU-RJ-spG" secondAttribute="leading" constant="20" id="XYm-H2-sh4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="TwU-RJ-spG"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Detail" id="jV3-d2-F2V">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="wbL-Yd-h4d">
+                            <connections>
+                                <action selector="saveButtonAction:" destination="fo6-ja-652" id="gVY-fs-c5T"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="speechTextView" destination="xyn-Bs-axN" id="uWt-ug-KUN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZCv-6P-kOY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="837.68115942028987" y="101.78571428571428"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="mic" catalog="system" width="54" height="64"/>
+    </resources>
+</document>
